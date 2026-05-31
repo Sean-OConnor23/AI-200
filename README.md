@@ -7,40 +7,43 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
 ## Az breakdown
 ```mermaid
 graph LR
-    %% Styles for easy scanning
-    classDef core fill:#0078d4,stroke:#fff,stroke-width:2px,color:#fff;
-    classDef cmd fill:#1f2937,stroke:#0078d4,stroke-width:1px,color:#38bdf8,font-family:monospace;
-    classDef desc fill:#f8fafc,stroke:#e2e8f0,stroke-dasharray: 5 5,color:#475569,font-size:12px;
+    %% Visual Theme Styles
+    classDef service fill:#0078d4,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef action fill:#10b981,stroke:#fff,stroke-width:1px,color:#fff;
+    classDef flag fill:#1f2937,stroke:#0078d4,stroke-width:1px,color:#38bdf8,font-family:monospace;
+    classDef desc fill:#f8fafc,stroke:#e2e8f0,stroke-dasharray: 3 3,color:#475569,font-size:11px;
 
-    %% Core CLI Root
-    AZ[az CLI]:::core
+    %% SERVICE LEVEL
+    VM[az vm]:::service
 
-    %% --- LOGIN & CONFIG ---
-    AZ --> LoginConfig[login / config]:::core
-    
-    LoginConfig --> c_login["az login"]:::cmd
-    c_login -.-> d_login["Log in interactively to Azure"]:::desc
-    
-    LoginConfig --> c_account["az account set --sub"]:::cmd
-    c_account -.-> d_account["Switch active subscription context"]:::desc
+    %% ACTION LEVEL
+    VM --> Create[create]:::action
+    VM --> List[list]:::action
 
-    %% --- RESOURCE GROUPS ---
-    AZ --> RG[group]:::core
-    
-    RG --> c_rg_create["az group create"]:::cmd
-    c_rg_create -.-> d_rg_create["Create a resource group container (-n -l)"]:::desc
-    
-    RG --> c_rg_list["az group list -o table"]:::cmd
-    c_rg_list -.-> d_rg_list["List all groups in a clean text table"]:::desc
+    %% FLAGS FOR 'CREATE'
+    Create --> f_name["--name (-n)"]:::flag
+    f_name -.-> d_name["Name of the virtual machine"]:::desc
 
-    %% --- VIRTUAL MACHINES ---
-    AZ --> VM[vm]:::core
-    
-    VM --> c_vm_create["az vm create"]:::cmd
-    c_vm_create -.-> d_vm_create["Deploy a new virtual machine instance"]:::desc
-    
-    VM --> c_vm_stop["az vm stop"]:::cmd
-    c_vm_stop -.-> d_vm_stop["Power off a VM without deallocating it"]:::desc
+    Create --> f_rg["--resource-group (-g)"]:::flag
+    f_rg -.-> d_rg["Target resource group container"]:::desc
+
+    Create --> f_img["--image"]:::flag
+    f_img -.-> d_img["OS image (e.g., Ubuntu2204, Win2022Datacenter)"]:::desc
+
+    Create --> f_admin["--admin-username"]:::flag
+    f_admin -.-> d_admin["Root/admin user account name"]:::desc
+
+    Create --> f_ssh["--generate-ssh-keys"]:::flag
+    f_ssh -.-> d_ssh["Auto-builds and stores secure SSH keys"]:::desc
+
+    %% FLAGS FOR 'LIST'
+    List --> f_out["--output (-o)"]:::flag
+    f_out -.-> d_out["Format: table, json, yaml, tsv"]:::desc
+
+    List --> f_query["--query"]:::flag
+    f_query -.-> d_query["JMESPath string to filter JSON output fields"]:::desc
 ```
+
+
 
 
