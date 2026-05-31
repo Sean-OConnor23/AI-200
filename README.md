@@ -5,7 +5,7 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
 1. Build and run a container image with ACR Tasks
 
 ## Az breakdown
-
+```text
 az vm/
 ├── create ............................ Deploy a new virtual machine instance
 │   ├── --name (-n) ................... Name of the virtual machine
@@ -20,7 +20,7 @@ az vm/
 └── stop .............................. Power off a running VM
     ├── --name (-n) ................... Name of the target virtual machine
     └── --no-wait ..................... Do not wait for the long action to finish
-
+```
 
 
 
