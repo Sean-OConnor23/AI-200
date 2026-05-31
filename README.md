@@ -11,7 +11,7 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
    - Deploy a Container to Azure App Service
 4. 
 
-## Az breakdown
+## Az CLI Breakdown
 ```text
 az vm/
 ├── create ............................ Deploy a new virtual machine instance
