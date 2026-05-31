@@ -6,14 +6,18 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
 
 ## Az breakdown
 ```mermaid
-mindmap
-  root((My App))
-    src
-      components
-        Button
-        Navbar
-      App.js
-    public
-      index.html
+graph TD
+    Root[my-app/] --> Src[src/]
+    Root --> Public[public/]
+
+    subgraph SrcGroup [Source Files - Core App Logic]
+        Src --> Components[components/]
+        Src --> App[App.js]
+    end
+
+    subgraph PublicGroup [Public Assets - Served Raw to Browser]
+        Public --> Index[index.html]
+        Public --> Fav[favicon.ico]
+    end
 ```
 
