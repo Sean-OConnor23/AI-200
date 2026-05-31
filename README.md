@@ -6,9 +6,14 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
 
 ## Az breakdown
 ```mermaid
-graph TD
-    Root[My Project] --> Src[src]
-    Root --> Public[public]
-    Src --> Components[components]
-    Src --> App[App.js]
+mindmap
+  root((My App))
+    src
+      components
+        Button
+        Navbar
+      App.js
+    public
+      index.html
 ```
+
