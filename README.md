@@ -3,4 +3,12 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
 
 ## Exercises
 1. Build and run a container image with ACR Tasks
-2. 
+
+## Az breakdown
+```mermaid
+graph TD
+    Root[My Project] --> Src[src]
+    Root --> Public[public]
+    Src --> Components[components]
+    Src --> App[App.js]
+```
