@@ -5,7 +5,8 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
 1. Azure Container Registry
    - Build and Run a Container Image With ACR Tasks
 2. Azure App Service
-   - Deploy a Container to Azure App Service 
+   - Deploy a Container to Azure App Service
+      * Deploy a Linux container image from ACR to Azure App Service
 
 ## Az CLI Breakdown
 ```text
