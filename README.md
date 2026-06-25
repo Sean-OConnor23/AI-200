@@ -4,12 +4,8 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
 ## Exercises
 1. Azure Container Registry
    - Build and Run a Container Image With ACR Tasks
-      * **Feature Authentication:** Secure login system.
-       This module handles all user sign-ups, password resets, and session management using JWT tokens.
-      * **Feature Dashboard:** Main user interface.
 2. Azure App Service
-   - Deploy a Container to Azure App Service
-4. 
+   - Deploy a Container to Azure App Service 
 
 ## Az CLI Breakdown
 ```text
@@ -62,6 +58,13 @@ az
 └──  (Last item)
 │    (Vertical line)
 ─    (Horizontal line)
+1. Azure Container Registry
+   - Build and Run a Container Image With ACR Tasks
+      * **Feature Authentication:** Secure login system.
+       This module handles all user sign-ups, password resets, and session management using JWT tokens.
+      * **Feature Dashboard:** Main user interface.
+2. Azure App Service
+   - Deploy a Container to Azure App Service
 -->
 
 
