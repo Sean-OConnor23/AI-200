@@ -52,7 +52,7 @@ az
 |    |     |    ├── --registry -r ............. Name of container registry (specified in lower case)
 |    |     |    └──  --output -o ............... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ```
-## Az Provider Register namespaces
+### "Az provider register --namespace" values used
 1. Microsoft.ContainerRegistry
 2. Microsoft.Web
 
