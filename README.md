@@ -58,10 +58,10 @@ az
 │    ├── run .................................. Queues a quick run providing streamed logs for an ACR
 |    |    ├── --registry -r [Required] ........ Name of container registry (specified in lower case)
 |    |    └── --cmd ........................... Commands to execute. Also supports additional docker run parameters
-│    ├── task ................................. Manage a collection of steps for building, testing and OS & Framework patching container images using ACR
-|    |     └── list-runs ...................... List all of the executed runs for an ACR, with the ability to filter by a specific Task
-|    |          ├── --registry -r ............. Name of container registry (specified in lower case)
-|    |          └── --output -o ............... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+│    └── task ................................. Manage a collection of steps for building, testing and OS & Framework patching container images using ACR
+|          └── list-runs ...................... List all of the executed runs for an ACR, with the ability to filter by a specific Task
+|               ├── --registry -r ............. Name of container registry (specified in lower case)
+|               └── --output -o ............... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ├── webapp ....................................... Manage web apps
 │    ├── create ................................ Create a web app
 │    │     ├── --resource-group -g [Required] ....... Name of resource group
@@ -99,14 +99,14 @@ az
 |    |               ├── --resource-group -g [Required] .... Name of resource group
 |    |               ├── --name -n [Required] .... Name of the web app
 |    |               └── --output -o ..... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
-│    ├── log ................................. Manage web app logs.
-|    |     ├── config ...................... Configure logging for a web app
-|    |     |    ├── --resource-group -g ............. Name of the resource group
-|    |     |    ├── --docker-container-logging ............. Configure gathering STDOUT and STDERR output from container. Allowed values: filesystem, off.
-|    |     |    └── --name -n ............... Name of the web app.
-|    |     └── tail ...................... Start live log tracing for a web app
-|    |          ├── --resource-group -g ............. Name of the resource group
-|    |          └── --name -n ............... Name of the web app
+│    └── log ................................. Manage web app logs.
+|          ├── config ...................... Configure logging for a web app
+|          |    ├── --resource-group -g ............. Name of the resource group
+|          |    ├── --docker-container-logging ............. Configure gathering STDOUT and STDERR output from container. Allowed values: filesystem, off.
+|          |    └── --name -n ............... Name of the web app.
+|          └── tail ...................... Start live log tracing for a web app
+|               ├── --resource-group -g ............. Name of the resource group
+|               └── --name -n ............... Name of the web app
 
 
 ```
