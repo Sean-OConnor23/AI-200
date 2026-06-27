@@ -21,6 +21,9 @@ az
 |               ├── --assignee ... Represent a user, group, or service principal. supported format: object id, user sign-in name, or service principal name.
 |               ├── --scope [Required] ....  Scope at which the role assignment or definition applies to.
 |               └── --role [Required] ..... Role name or id.
+├── extension .................................. Manage and update CLI extensions.
+│   └── add .............................. Add an extension.
+│         └── --name ....... Name of extension
 ├── group ..................................... Manage resource groups and template deployments
 │   └── delete ................................ Delete a resource group
 │         ├── --name --resource group -g -n [Required] ....... Name of resource group
@@ -107,12 +110,46 @@ az
 |          └── tail ...................... Start live log tracing for a web app
 |               ├── --resource-group -g ............. Name of the resource group
 |               └── --name -n ............... Name of the web app
-
-
+├── containerapp .................................. Manage Azure Container Apps.
+│    ├── create .............................. Create a container app.
+|    |     ├── --resource-group -g [Required] ............. Name of the resource group
+|    |     ├── --environment ............. Name or resource ID of the container app's environment.
+|    |     ├── --image ............. Container image
+|    |     ├── --ingress ............. The ingress type (external, internal)
+|    |     ├── --target-port ............. The application port used for ingress traffic
+|    |     ├── --env-vars ............. A list of environment variables for the container
+|    |     ├── --registry-server ............. The container registry server hostname.
+|    |     ├── --registry-identity ............. The managed identity with which to authenticate to the Azure Container Registry
+|    |     └── --name -n [Required] ............... Name of the container app.
+│    ├── secret ................................. Commands to manage secrets.
+|    |     └──  set ...................... Create/update secrets
+|    |          ├── --resource-group -g ............. Name of resource group.
+|    |          ├── --secrets -s [Required] ............. A list of secrets for the container app.  
+|    |          └── --name -n ............... Name of container app.
+│    ├── update .............................. Update a container app. In multiple revisions mode, create a new revision based on the latest revision.
+|    |     ├── --resource-group -g ............. Name of the resource group
+|    |     ├── --set-env-vars ............. Add or update environment variable(s) in container. Existing environment variables are not modified.
+|    |     └── --name -n ............... Name of container app.
+│    ├── revision ................................. Commands to manage revisions.
+|    |     └──  list ...................... List a container app's revisions.
+|    |          ├── --resource-group -g [Required] ............. Name of resource group.
+|    |          ├── --ouput -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc). 
+|    |          └── --name -n [Required] ............... Name of container app.
+│    ├── show .............................. Show details of container app.
+|    |     ├── --resource-group -g ............. Name of the resource group
+|    |     ├── --output -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |     ├── --query ............. JMESPath query string.
+|    |     └── --name -n ............... Name of container app
+│    ├── logs ................................. Show container app logs.
+|    |     └──  show ...................... Show past logs and/or print logs in real time
+|    |          ├── --resource-group -g [Required] ............. Name of resource group.
+|    |          └── --name -n [Required] ............... Name of container app
 ```
 ### "Az provider register --namespace" values used
 1. Microsoft.ContainerRegistry
 2. Microsoft.Web
+3. Microsoft.OperationalInsights
+4. Microsoft.App
 
 <!-- Copy/Paste to edit ASCII Tree
 ├──  (Middle item)
