@@ -15,12 +15,23 @@ az
 ├── provider .................................. Manage resource providers
 │   └── register .............................. Register a provider
 │         └── --namespace -n [Required] ....... The resource namespace
+├── role .................................. Manage Azure role-based access control (Azure RBAC).
+│   └── assignment .............................. Manage role assignments.
+│         └── create ....... Create a new role assignment for a user, group, or service principal.
+|               ├── --assignee ... Represent a user, group, or service principal. supported format: object id, user sign-in name, or service principal name.
+|               ├── --scope [Required] ....  Scope at which the role assignment or definition applies to.
+|               └── --role [Required] ..... Role name or id.
 ├── group ..................................... Manage resource groups and template deployments
 │   └── delete ................................ Delete a resource group
 │         ├── --name --resource group -g -n [Required] ....... Name of resource group
 │         ├── --yes -y ........................ Do not prompt for confirmation (No additional param)
 │         └── --no-wait ....................... Do not wait for the long-running operation to finish (No additional param)
 ├── acr ....................................... Manage private registries with Azure Container Registries
+│    ├── show ................................ Gets the details of an ACR
+│    │     ├── --resource-group -g ....... Name of resource group.
+│    │     ├── --query ....... JMESPath query string.
+│    │     ├── --output ....... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+│    │     └── --name -n [Required] ..................... Name of the container registry.
 │    ├── build ................................ Queues a quick build, providing streaming logs for an ACR
 │    │     ├── --registry -r [Required] ....... Name of container registry (specified in lower case)
 │    │     └── --image -t ..................... Name and tag of image using the format '-t repo/image:tag' (Multiple tags are supported by passing -t multiple times)
@@ -40,17 +51,64 @@ az
 |    |          ├── --repository -r [Required]. The name of the repository
 |    |          └── --output -o ............... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 │    ├── manifest ............................. Manage artifact manifests in ACR
-|    |     ├── list-metadata .................. List the metadata of the manifests in the repo in an ACR
-|    |     |    ├── --registry -r ............. Name of container registry
-|    |     |    ├── --output -o ............... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
-|    |     |    └── --name -n ................. Name of the repository
+|    |     └── list-metadata .................. List the metadata of the manifests in the repo in an ACR
+|    |          ├── --registry -r ............. Name of container registry
+|    |          ├── --output -o ............... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |          └── --name -n ................. Name of the repository
 │    ├── run .................................. Queues a quick run providing streamed logs for an ACR
 |    |    ├── --registry -r [Required] ........ Name of container registry (specified in lower case)
 |    |    └── --cmd ........................... Commands to execute. Also supports additional docker run parameters
 │    ├── task ................................. Manage a collection of steps for building, testing and OS & Framework patching container images using ACR
-|    |     ├── list-runs ...................... List all of the executed runs for an ACR, with the ability to filter by a specific Task
-|    |     |    ├── --registry -r ............. Name of container registry (specified in lower case)
-|    |     |    └──  --output -o ............... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |     └── list-runs ...................... List all of the executed runs for an ACR, with the ability to filter by a specific Task
+|    |          ├── --registry -r ............. Name of container registry (specified in lower case)
+|    |          └── --output -o ............... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+├── webapp ....................................... Manage web apps
+│    ├── create ................................ Create a web app
+│    │     ├── --resource-group -g [Required] ....... Name of resource group
+│    │     ├── --plan -p [Required] ....... Name or resource id of the app service plan. Use 'appservice plan create' to get one.
+│    │     ├── --name -n [Required] ....... Name of the new web app.
+│    │     └── --container-image-name -c ..................... The container custom image name and optionally the tag name 
+│    ├── identity ................................. Manage web app's managed identity.
+|    |     ├── assign ...................... Assign managed identity to the web app
+|    |     |    ├── --resource-group -g ............. Name of resource group. 
+|    |     |    └── --name -n ............... Name of web app
+|    |     └── show ...................... Display web app's managed identity.
+|    |          ├── --resource-group ............. Name of resource group
+|    |          ├── --name ............... Name of web app
+|    |          ├── --query ............. JMESPath query string
+|    |          └── --output ............... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+│    ├── config ................................. Configure a web app.
+|    |     ├── set ...................... Set a web app's configuration
+|    |     |    ├── --resource-group -g ............. Name of resource group.
+|    |     |    ├── --acr-use-identity ............. Enable or disable pull image from acr use managed identity. Allowed values: false, true.
+|    |     |    ├── --acr-identity ............. Accept system or user assigned identity which will be set for acr image pull.
+|    |     |    ├── --always-on ............. Ensure web app gets loaded all the time, rather unloaded after been idle. Recommended when you have continuous web jobs running.
+|    |     |    └── --name -n ............... Name of web app.
+|    |     ├── container ...................... Manage an existing web app's container settings
+|    |     |    └── set ............. Set an existing web app's container settings.
+|    |     |         ├── --resource-group -g ..........Name of a resource group
+|    |     |         ├── --name -n ....... Name of the web app
+|    |     |         ├── --container-image-name -c -i .........The container custom image name and optionally the tag name
+|    |     |         └── --container-registry-url -r ..... The container registry server url.
+|    |     └── appsettings ...................... Configure web app settings. Updating or removing application settings will cause an app recycle.
+|    |          ├── set ............. Set the web app's settings
+|    |          |    ├── --resource-group -g ..... Name of resource group
+|    |          |    ├── --name -n ....... Name of the web app
+|    |          |    └── --settings ...... Space-separated appsettings in KEY=VALUE format. Use @{file} to load from a file.
+|    |          └── list ............. Get the details of a web app's settings
+|    |               ├── --resource-group -g [Required] .... Name of resource group
+|    |               ├── --name -n [Required] .... Name of the web app
+|    |               └── --output -o ..... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+│    ├── log ................................. Manage web app logs.
+|    |     ├── config ...................... Configure logging for a web app
+|    |     |    ├── --resource-group -g ............. Name of the resource group
+|    |     |    ├── --docker-container-logging ............. Configure gathering STDOUT and STDERR output from container. Allowed values: filesystem, off.
+|    |     |    └── --name -n ............... Name of the web app.
+|    |     └── tail ...................... Start live log tracing for a web app
+|    |          ├── --resource-group -g ............. Name of the resource group
+|    |          └── --name -n ............... Name of the web app
+
+
 ```
 ### "Az provider register --namespace" values used
 1. Microsoft.ContainerRegistry
