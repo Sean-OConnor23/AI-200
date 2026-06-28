@@ -136,6 +136,12 @@ az
 |    |     ├── --resource-group -g ............. Name of the resource group
 |    |     ├── --set-env-vars ............. Add or update environment variable(s) in container. Existing environment variables are not modified.
 |    |     ├── --remove-env-vars ............. Remove environment variable(s) from container.
+|    |     ├── --min-replicas ............. The minimum number of replicas
+|    |     ├── --max-replicas ............. The maximum number of replicas
+|    |     ├── --scale-rule-name --srn ............. The name of the scale rule
+|    |     ├── --scale-rule-type --srt ............. The type of the scale rule
+|    |     ├── --scale-rule-http-concurrency --srhc ............. Maximum number of concurrent requests before scale out
+|    |     ├── --yaml ............. Path to a .yaml file with the configuration of a container app.
 |    |     └── --name -n ............... Name of container app.
 │    ├── revision ................................. Commands to manage revisions.
 |    |     └──  list ...................... List a container app's revisions.
