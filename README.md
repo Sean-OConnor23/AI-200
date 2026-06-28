@@ -21,6 +21,12 @@ az
 |               ├── --assignee ... Represent a user, group, or service principal. supported format: object id, user sign-in name, or service principal name.
 |               ├── --scope [Required] ....  Scope at which the role assignment or definition applies to.
 |               └── --role [Required] ..... Role name or id.
+├── monitor .................................. Manage the Azure Monitor Service.
+│   └── log-analytics .............................. Manage Azure log analytics.
+│         └── query ....... Query a Log Analytics workspace.
+|               ├── --workspace -w [Required] ... GUID of Log Analytics workspace
+|               ├── --analytics-query [Required] .... Query to execute over Log Analytics data.
+|               └── --output -o ..... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ├── extension .................................. Manage and update CLI extensions.
 │   └── add .............................. Add an extension.
 │         └── --name ....... Name of extension
@@ -129,6 +135,7 @@ az
 │    ├── update .............................. Update a container app. In multiple revisions mode, create a new revision based on the latest revision.
 |    |     ├── --resource-group -g ............. Name of the resource group
 |    |     ├── --set-env-vars ............. Add or update environment variable(s) in container. Existing environment variables are not modified.
+|    |     ├── --remove-env-vars ............. Remove environment variable(s) from container.
 |    |     └── --name -n ............... Name of container app.
 │    ├── revision ................................. Commands to manage revisions.
 |    |     └──  list ...................... List a container app's revisions.
@@ -144,6 +151,17 @@ az
 |    |     └──  show ...................... Show past logs and/or print logs in real time
 |    |          ├── --resource-group -g [Required] ............. Name of resource group.
 |    |          └── --name -n [Required] ............... Name of container app
+│    ├── ingress ................................. Commands to manage ingress and traffic-splitting.
+|    |     └──  update ...................... Update ingress for a container app.
+|    |          ├── --resource-group -g ............. Name of resource group.
+|    |          ├── --target-port ............. The application port used for ingress traffic.
+|    |          └── --name -n ............... Name of container app
+│    ├── env ................................. Commands to manage Container Apps environments.
+|    |     └──  show ...................... Show details of a Container Apps environment.
+|    |          ├── --resource-group -g ............. Name of resource group.
+|    |          ├── --query ............. JMESPath query string.
+|    |          ├── --output ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |          └── --name -n ............... Name of container app's environment
 ```
 ### "Az provider register --namespace" values used
 1. Microsoft.ContainerRegistry
