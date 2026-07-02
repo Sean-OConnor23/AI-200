@@ -174,6 +174,11 @@ az
 2. Microsoft.Web
 3. Microsoft.OperationalInsights
 4. Microsoft.App
+5. Microsoft.CognitiveServices
+6. Microsoft.ContainerService
+7. Microsoft.Compute
+8. Microsoft.Network
+9. Microsoft.Storage
 
 <!-- Copy/Paste to edit ASCII Tree
 ├──  (Middle item)
