@@ -21,6 +21,10 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
          * deployment.yaml --> Contains environment variables, volume mounts, and probes
          * service.yaml --> Exposes application pods to network traffic
    - Troubleshoot apps on Azure Kubernetes Service
+6. Azure Cosmos DB For NoSQL
+   - Build a RAG Document Store on Azure Cosmos DB For NoSQL
+   - Build a Semantic Search Application With Azure Cosmos DB For NoSQL
+   - Optimize Query Performance With Vector Indexes on Azure Cosmos DB For NoSQL
 
 ## Az CLI Breakdown
 ```text
