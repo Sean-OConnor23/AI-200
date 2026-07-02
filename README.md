@@ -7,6 +7,19 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
 2. Azure App Service
    - Deploy a Container to Azure App Service
       * Deploy a Linux container image from ACR to Azure App Service
+3. Azure Container Apps
+   - Deploy a Containerized Backend API to Container Apps
+   - Diagnose and Fix a Failing Deployment
+   - Configure Autoscaling Using KEDA Triggers
+5. Azure Kubernetes Service
+   - Deploy an AI Inference API to Azure Kubernetes Service
+   - Configure apps on Azure Kubernetes Service
+      - Different Deployment Files
+         * configmap.yaml --> Stores non-sensitive config data as kvps that can be consumed by pods
+         * secrets.yaml --> Store sensitive information like passwords, tokens, and keys in a base64-encoded format
+         * pvc.yaml --> PersistentVolumeClaim requests storage resources from Azure that can be mounted to pods
+         * deployment.yaml --> Contains environment variables, volume mounts, and probes
+         * service.yaml --> Exposes application pods to network traffic
 
 ## Az CLI Breakdown
 ```text
