@@ -213,11 +213,34 @@ az
 ```text
 kubectl
 ├── get ..................................... Display one or many resources.
+|   ├── pods ...................... The files that contain the configurations
+│   |    ├── --show-labels .............................. Show the status of the rollout
+│   |    ├── --w .............................. Show the status of the rollout
+│   |    └── --namespace -n .............................. Show the status of the rollout
+|   ├── endpointslices ...................... The files that contain the configurations
+│   |    ├── --namespace -n .............................. Show the status of the rollout
+│   |    └── --field-selector .............................. Show the status of the rollout
+|   └── events ...................... The files that contain the configurations
+│        ├── --namespace -n .............................. Show the status of the rollout
+│        └── -l .............................. Show the status of the rollout
 ├── rollout .................................. Manage the rollout of a resource
 │   └── status .............................. Show the status of the rollout
 ├── apply .................................. Apply a configuration to a resource by file name or stdin
 |   ├── --filename -f ...................... The files that contain the configurations to apply.
 │   └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target
+├── port-forward .................................. Manage the rollout of a resource
+│   └── --namespace -n .............................. Show the status of the rollout
+├── describe ..................................... Display one or many resources.
+|   └── service ...................... The files that contain the configurations
+│        └── --namespace -n .............................. Show the status of the rollout
+├── edit ..................................... Display one or many resources.
+|   ├── service ...................... The files that contain the configurations
+│   |    └── --namespace -n .............................. Show the status of the rollout
+|   └── deployment ...................... The files that contain the configurations
+│        └── --namespace -n .............................. Show the status of the rollout
+├── logs .................................. Manage the rollout of a resource
+│   ├── -l .............................. Show the status of the rollout
+│   └── --namespace -n .............................. Show the status of the rollout
 ```
 ### "Az provider register --namespace" values used
 1. Microsoft.ContainerRegistry
