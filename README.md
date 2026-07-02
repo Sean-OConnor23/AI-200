@@ -162,12 +162,48 @@ az
 |    |          ├── --resource-group -g ............. Name of resource group.
 |    |          ├── --target-port ............. The application port used for ingress traffic.
 |    |          └── --name -n ............... Name of container app
-│    ├── env ................................. Commands to manage Container Apps environments.
-|    |     └──  show ...................... Show details of a Container Apps environment.
-|    |          ├── --resource-group -g ............. Name of resource group.
-|    |          ├── --query ............. JMESPath query string.
-|    |          ├── --output ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
-|    |          └── --name -n ............... Name of container app's environment
+│    └── env ................................. Commands to manage Container Apps environments.
+|          └──  show ...................... Show details of a Container Apps environment.
+|               ├── --resource-group -g ............. Name of resource group.
+|               ├── --query ............. JMESPath query string.
+|               ├── --output ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|               └── --name -n ............... Name of container app's environment
+├── aks .................................. Azure Kubernetes Service
+│    ├── create .............................. Create a new managed Kubernetes cluster
+|    |     ├── --resource-group -g [Required] ............. Name of the resource group
+|    |     ├── --node-count -c ............. Number of nodes in the Kubernetes node pool.
+|    |     ├── --node-vm-size -s ............. Size of Virtual Machines to create as Kubernetes nodes
+|    |     ├── --vm-set-type ............. Agent pool vm set type. 
+|    |     ├── --load-balancer-sku ............. Azure Load Balance SKU selection for your cluster.
+|    |     ├── --enable-managed-identity ............. Using a system-assigned managed identity to manage cluster resource group.
+|    |     ├── --network-plugin ............. The kubernetes plugin to use.
+|    |     ├── --no-ssh-key -x ............. Do not use or create a local SSH key.
+|    |     ├── --attach-acr ............. Grant the 'acrpull' role assignment to the ACR specified by name or resource ID.
+|    |     └── --name -n [Required] ............... Name of the managed cluster.
+│    ├── wait .............................. Wait for a managed Kubernetes cluster to reach a desired state.
+|    |     ├── --resource-group -g [Required] ............. Name of the resource group.
+|    |     ├── --updated............. Wait until updated with provisioningState at 'Suceeded'.
+|    |     └── --name -n [Required] ............... Name of the managed cluster.
+│    ├── get-credentials .............................. Get access credentials for a managed Kubernetes cluster.
+|    |     ├── --resource-group -g [Required] ............. Name of the resource group
+|    |     ├── --overwrite-existing ............. Overwrite any existing cluster entry with the same name.
+|    |     └── --name -n [Required] ............... Name of the managed cluster.
+│    ├── show .............................. Show the details for a managed Kubernetes cluster.
+|    |     ├── --resource-group -g [Required] ............. Name of the resource group
+|    |     ├── --output -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |     ├── --query ............. JMESPath query string.
+|    |     └── --name -n [Required] ............... Name of the managed cluster.
+```
+
+## Kubectl CLI Breakdown
+```text
+kubectl
+├── get ..................................... Display one or many resources.
+├── rollout .................................. Manage the rollout of a resource
+│   └── status .............................. Show the status of the rollout
+├── apply .................................. Apply a configuration to a resource by file name or stdin
+|   ├── --filename -f ...................... The files that contain the configurations to apply.
+│   └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target
 ```
 ### "Az provider register --namespace" values used
 1. Microsoft.ContainerRegistry
