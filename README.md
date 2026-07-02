@@ -20,6 +20,7 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
          * pvc.yaml --> PersistentVolumeClaim requests storage resources from Azure that can be mounted to pods
          * deployment.yaml --> Contains environment variables, volume mounts, and probes
          * service.yaml --> Exposes application pods to network traffic
+   - Troubleshoot apps on Azure Kubernetes Service
 
 ## Az CLI Breakdown
 ```text
