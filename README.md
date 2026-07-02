@@ -246,7 +246,7 @@ kubectl
 │   ├── --selector -l .............................. Selector (label query) to filter on, supports '=', '==', '!=', 'in', 'notin'.
 │   └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
 ```
-### "Az provider register --namespace" values used
+## Az provider register --namespace Values Used:
 1. Microsoft.ContainerRegistry
 2. Microsoft.Web
 3. Microsoft.OperationalInsights
