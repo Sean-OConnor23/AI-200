@@ -23,6 +23,11 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
    - Troubleshoot apps on Azure Kubernetes Service
 6. Azure Cosmos DB For NoSQL
    - Build a RAG Document Store on Azure Cosmos DB For NoSQL
+        - Common RAG Patterns:
+           * Point Reads --> Retrieve a specific chunk by ID and document ID (lowest latency)
+           * Single-Partition Queries --> Get all chunks for a document efficiently
+           * Cross-Partition Queries --> Search across documents by metadata
+           * Vector Search --> When combined with vector indexing
    - Build a Semantic Search Application With Azure Cosmos DB For NoSQL
    - Optimize Query Performance With Vector Indexes on Azure Cosmos DB For NoSQL
 
@@ -206,11 +211,58 @@ az
 |    |     ├── --resource-group -g [Required] ............. Name of the resource group
 |    |     ├── --overwrite-existing ............. Overwrite any existing cluster entry with the same name.
 |    |     └── --name -n [Required] ............... Name of the managed cluster.
-│    ├── show .............................. Show the details for a managed Kubernetes cluster.
-|    |     ├── --resource-group -g [Required] ............. Name of the resource group
-|    |     ├── --output -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+│    └── show .............................. Show the details for a managed Kubernetes cluster.
+|          ├── --resource-group -g [Required] ............. Name of the resource group
+|          ├── --output -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|          ├── --query ............. JMESPath query string.
+|          └── --name -n [Required] ............... Name of the managed cluster.
+├── cosmosdb .................................. Manage Azure Cosmos DB database accounts.
+│    ├── create .............................. Creates a new Azure Cosmos DB database account.
+|    |     ├── --resource-group -g [Required] ............. Name of the resource group.
+|    |     ├── --locations ............. Add a location to the Cosmos DB database account.
+|    |     ├── --capabilities ............. Set custom capabilities on the Cosmos DB database account.
+|    |     ├── --default-consistency-level ............. Default consistency level of the Cosmos DB database account. 
+|    |     └── --name -n [Required] ............... Name of the Cosmos DB database account.
+│    ├── show .............................. Get the details of an Azure Cosmos DB database account.
+|    |     ├── --resource-group -g ............. Name of the resource group
+|    |     ├── --name -n ............. Name of the Cosmos DB database account.
 |    |     ├── --query ............. JMESPath query string.
-|    |     └── --name -n [Required] ............... Name of the managed cluster.
+|    |     └── --output -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc) 
+│    ├── sql ................................. Manage SQL resources of Azure Cosmos DB account.
+|    |     ├──  database ...................... Manage Azure Cosmos DB SQL databases.
+|    |     |    ├── create ............. Create an SQL database under an Azure Cosmos DB account.
+|    |     |    |   ├── --resource-group -g [Required] ........ Name of resource group.
+|    |     |    |   ├── --account-name -a [Required] ........ Cosmosdb account name.
+|    |     |    |   ├── --name [Required] ........ Database name.
+|    |     |    └── show ............... Show the details of a SQL database under an Azure Cosmos DB account.
+|    |     |        ├── --resource-group [Required] ........ Name of resource group.
+|    |     |        ├── --account-name -a [Required] ........ Cosmosdb account name.
+|    |     |        └── --name [Required] ........ Database name.
+|    |     ├──  container ...................... Manage Azure Cosmos DB SQL containers.
+|    |     |    ├── create ............. Create an SQL container under an Azure Cosmos DB SQL database.
+|    |     |    |   ├── --resource-group -g [Required] ........ Name of resource group.
+|    |     |    |   ├── --account-name -a [Required] ........ Cosmosdb account name.
+|    |     |    |   ├── --database-name [Required] ........ Database name.
+|    |     |    |   ├── --name [Required] ........ Container Name.
+|    |     |    |   └── --partition-key-path [Required] ........ Partition Key Path, e.g., '/address/zipcode'.
+|    |     |    └── show ............... Show the details of a SQL container under an Azure Cosmos DB SQL database.
+|    |     |        ├── --resource-group [Required] ........ Name of resource group.
+|    |     |        ├── --account-name -a [Required] ........ Cosmosdb account name.
+|    |     |        ├── --database-name [Required] ........ Database name.
+|    |     |        └── --name [Required] ........ Container Name.
+|    |     └──  role ...................... Manage Azure Cosmos DB SQL role resources.
+|    |          ├── assignment ............. Manage Azure Cosmos DB SQL role assignments.
+|    |          |   ├── create ........ Create a SQL role assignment under an Azure Cosmos DB account.
+|    |          |   |   ├── --account-name -a [Required] ........ Cosmosdb account name.
+|    |          |   |   ├── --resource-group [Required] ........ Name of resource group.
+|    |          |   |   ├── --role-definition-name ........ Unique Name of the Role Definition that this Role Assignment refers to.
+|    |          |   |   ├── --principal-id [Required] ........ AAD Object ID of the principal to which this Role Assignment is being granted.
+|    |          |   |   ├── --scope [Required] ........ Data plane resource path at which this Role Assignment is being granted.
+|    |          |   └── list ........ List all SQL role assignments under an Azure Cosmos DB account.
+|    |          |       ├── --resource-group -g [Required] ........ Name of resource group.
+|    |          |       ├── --query ........ JMESPath query string.
+|    |          |       ├── --account-name -a [Required] ........ Cosmosdb account name.
+|    |          |       └── --ouput -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc) 
 ```
 
 ## Kubectl CLI Breakdown
