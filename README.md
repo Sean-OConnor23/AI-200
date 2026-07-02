@@ -213,34 +213,34 @@ az
 ```text
 kubectl
 ├── get ..................................... Display one or many resources.
-|   ├── pods ...................... The files that contain the configurations
-│   |    ├── --show-labels .............................. Show the status of the rollout
-│   |    ├── --w .............................. Show the status of the rollout
-│   |    └── --namespace -n .............................. Show the status of the rollout
-|   ├── endpointslices ...................... The files that contain the configurations
-│   |    ├── --namespace -n .............................. Show the status of the rollout
-│   |    └── --field-selector .............................. Show the status of the rollout
-|   └── events ...................... The files that contain the configurations
-│        ├── --namespace -n .............................. Show the status of the rollout
-│        └── -l .............................. Show the status of the rollout
-├── rollout .................................. Manage the rollout of a resource
-│   └── status .............................. Show the status of the rollout
-├── apply .................................. Apply a configuration to a resource by file name or stdin
+|   ├── pods ...................... List all pods in ps output format.
+│   |    ├── --show-labels .............................. When printing, show all labels as the last column .
+│   |    ├── --watch -w .............................. After listing/getting the requested object, watch for changes.
+│   |    └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
+|   ├── endpointslices ...................... Kubernetes resource type.
+│   |    ├── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
+│   |    └── --field-selector .............................. Selector (field query) to filter on, supports '=', '==', and '!='.
+|   └── events ...................... Kubernetes resource type.
+│        ├── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
+│        └── --label-columns -l .............................. Accepts a comma separated list of labels that are going to be presented as columns.
+├── rollout .................................. Manage the rollout of a resource.
+│   └── status .............................. Show the status of the rollout.
+├── apply .................................. Apply a configuration to a resource by file name or stdin.
 |   ├── --filename -f ...................... The files that contain the configurations to apply.
-│   └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target
-├── port-forward .................................. Manage the rollout of a resource
-│   └── --namespace -n .............................. Show the status of the rollout
-├── describe ..................................... Display one or many resources.
-|   └── service ...................... The files that contain the configurations
-│        └── --namespace -n .............................. Show the status of the rollout
-├── edit ..................................... Display one or many resources.
-|   ├── service ...................... The files that contain the configurations
-│   |    └── --namespace -n .............................. Show the status of the rollout
-|   └── deployment ...................... The files that contain the configurations
-│        └── --namespace -n .............................. Show the status of the rollout
-├── logs .................................. Manage the rollout of a resource
-│   ├── -l .............................. Show the status of the rollout
-│   └── --namespace -n .............................. Show the status of the rollout
+│   └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
+├── port-forward .................................. Forward one or more local ports to a pod.
+│   └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
+├── describe ..................................... Show details of a specific resource or group of resources.
+|   └── service ...................... List a service. IP endpoints. Kubernetes resource type.
+│        └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
+├── edit ..................................... Edit a resource on the server.
+|   ├── service ...................... List a service. IP endpoints. Kubernetes resource type. 
+│   |    └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
+|   └── deployment ...................... Kubernetes resource type.
+│        └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
+├── logs .................................. Print the logs for a container in a pod.
+│   ├── --selector -l .............................. Selector (label query) to filter on, supports '=', '==', '!=', 'in', 'notin'.
+│   └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
 ```
 ### "Az provider register --namespace" values used
 1. Microsoft.ContainerRegistry
