@@ -256,6 +256,7 @@ kubectl
 7. Microsoft.Compute
 8. Microsoft.Network
 9. Microsoft.Storage
+10. Microsoft.DocumentDB
 
 <!-- Copy/Paste to edit ASCII Tree
 ├──  (Middle item)
