@@ -244,6 +244,8 @@ az
 |    |     |    |   ├── --account-name -a [Required] ........ Cosmosdb account name.
 |    |     |    |   ├── --database-name [Required] ........ Database name.
 |    |     |    |   ├── --name [Required] ........ Container Name.
+|    |     |    |   ├── --idx ........ Indexing Policy, you can enter it as a string or as a file.
+|    |     |    |   ├── --vector-embeddings ........ Vector Embedding Policy, you can enter it as a string or as a file.
 |    |     |    |   └── --partition-key-path [Required] ........ Partition Key Path, e.g., '/address/zipcode'.
 |    |     |    └── show ............... Show the details of a SQL container under an Azure Cosmos DB SQL database.
 |    |     |        ├── --resource-group [Required] ........ Name of resource group.
