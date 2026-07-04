@@ -320,6 +320,7 @@ kubectl
 8. Microsoft.Network
 9. Microsoft.Storage
 10. Microsoft.DocumentDB
+11. Microsoft.DBforPostgreSQL
 
 <!-- Copy/Paste to edit ASCII Tree
 ├──  (Middle item)
