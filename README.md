@@ -274,36 +274,35 @@ az
 |                       ├── --query ........ JMESPath query string.
 |                       ├── --account-name -a [Required] ........ Cosmosdb account name.
 |                       └── --ouput -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
-├── postgres .................................. Manage Azure Cosmos DB database accounts.
-│    ├── flexible-server ................................. Manage SQL resources of Azure Cosmos DB account.
-|    |     ├──  create ...................... Manage Azure Cosmos DB SQL databases.
-|    |     |    ├──  ............. Create an SQL database under an Azure Cosmos DB account.
-|    |     |    ├── --resource-group -g [Required] ........ Name of resource group.
-|    |     |    ├── --location ........ Cosmosdb account name.
-|    |     |    ├── --tier ........ Database name.
-|    |     |    ├── --storage-size ........ Database name.
-|    |     |    ├── --version ........ Database name.
-|    |     |    ├── --public-access ........ Database name.
-|    |     |    ├── --microsoft-entra-auth ........ Database name.
-|    |     |    ├── --password-auth ........ Database name.
-|    |     |    ├── --name [Required] ........ Database name.
-|    |     |    └── --sku-name ............... Show the details of a SQL database under an Azure Cosmos DB account.
-|    |     ├──  show ...................... Manage Azure Cosmos DB SQL containers.
-|    |     |    ├── --resource-group -g [Required] ........ Name of resource group.
-|    |     |    ├── --query ........ Name of resource group.
-|    |     |    ├── --output -o ........ Name of resource group.
-|    |     |    └── --name [Required] ........ Container Name.
-|    |     └──  microsoft-entra-admin ...................... Manage Azure Cosmos DB SQL role resources.
-|    |          ├── create ............. Manage Azure Cosmos DB SQL role assignments.
-|    |          |   ├── --resource-group ........ Create a SQL role assignment under an Azure Cosmos DB account.
-|    |          |   ├── --server-name ........ Cosmosdb account name.
-|    |          |   ├── --display-name ........ Name of resource group.
-|    |          |   └── --object-id ........ List all SQL role assignments under an Azure Cosmos DB account.
-|    |          ├── list ............. Manage Azure Cosmos DB SQL role assignments.
-|    |          |   ├── --resource-group ........ Create a SQL role assignment under an Azure Cosmos DB account.
-|    |          |   ├── --server-name ........ Cosmosdb account name.
-|    |          |   ├── --query ........ Name of resource group.
-|    |          |   └── --output -o ........ List all SQL role assignments under an Azure Cosmos DB account.
+├── postgres .................................. Manage Azure Database for PostgreSQL.
+│    └── flexible-server ................................. Manage Azure Database for PostgreSQL Flexible Servers.
+|          ├──  create ...................... Create a PostgreSQL flexible server.
+|          |    ├── --resource-group -g ........ Name of resource group.
+|          |    ├── --location -l ........ Location.
+|          |    ├── --tier ........ Compute tier of the server. Accepted values: Burstable, GeneralPurpose, MemoryOptimized.  Default: GeneralPurpose.
+|          |    ├── --storage-size ........ The storage capacity of the server. Minimum is 32 GiB and max is 16 TiB.  Default: 128.
+|          |    ├── --version ........ Server major version.
+|          |    ├── --public-access ........ Determines the public access. Enter single or range of IP addresses to be included in the allowed list of IPs.
+|          |    ├── --microsoft-entra-auth ........ Whether Microsoft Entra authentication is enabled.
+|          |    ├── --password-auth ........ Whether password authentication is enabled. 
+|          |    ├── --name -n ........ Name of the server.
+|          |    └── --sku-name ............... The name of the compute SKU. 
+|          ├──  show ...................... Get the details of a flexible server.
+|          |    ├── --resource-group -g ........ Name of resource group.
+|          |    ├── --query ........ JMESPath query string.
+|          |    ├── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|          |    └── --name -n ........ Name of the server.
+|          └──  microsoft-entra-admin ...................... Manage server Microsoft Entra administrators.
+|               ├── create ............. Create a Microsoft Entra administrator.
+|               |   ├── --resource-group -g [Required] ........ Name of resource group.
+|               |   ├── --server-name -s [Required] ........ Name of the server.
+|               |   ├── --display-name -u [Required] ........ Display name of the Microsoft Entra administrator user or group.
+|               |   └── --object-id -i [Required] ........ The unique ID of the Microsoft Entra administrator.
+|               ├── list ............. List all Microsoft Entra administrators.
+|               |   ├── --resource-group -g ........ Name of resource group.
+|               |   ├── --server-name -s ........ Name of the server.
+|               |   ├── --query ........ JMESPath query string.
+|               |   └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ```
 
 ## Kubectl CLI Breakdown
