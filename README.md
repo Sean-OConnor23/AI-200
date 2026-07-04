@@ -333,44 +333,44 @@ az
 |               |   ├── --server-name -s ........ Name of the server.
 |               |   ├── --query ........ JMESPath query string.
 |               |   └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
-├── redisenterprise .................................. Manage Azure Cosmos DB database accounts.
-│    ├── show .............................. Creates a new Azure Cosmos DB database account.
-|    |     ├── --resource-group -g [Required] ............. Name of the resource group.
-|    |     ├── --output -o ............. Set custom capabilities on the Cosmos DB database account.
-|    |     ├── --query ............. Default consistency level of the Cosmos DB database account. 
-|    |     └── --name -n [Required] ............... Name of the Cosmos DB database account.
-│    ├── create .............................. Get the details of an Azure Cosmos DB database account.
-|    |     ├── --resource-group -g ............. Name of the resource group
-|    |     ├── --name -n ............. Name of the Cosmos DB database account.
-|    |     ├── --location ............. JMESPath query string.
-|    |     ├── --public-network-access ............. JMESPath query string.
-|    |     ├── --no-database ............. JMESPath query string.
-|    |     ├── --no-wait ............. JMESPath query string.
-|    |     └── --sku ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
-|    └──  database ...................... Commands for managing server parameter values for flexible servers.
-|          ├── show ............. Update the parameter of a flexible server.
+├── redisenterprise .................................. Manage the redisenterprise cache.
+│    ├── show .............................. Get information about a RedisEnterprise cluster.
+|    |     ├── --resource-group -g ............. Name of the resource group.
+|    |     ├── --output -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |     ├── --query ............. JMESPath query string.
+|    |     └── --name --cluster-name -n ............... The name of the RedisEnterprise cluster.
+│    ├── create .............................. Create an existing (overwrite/recreate, with potential downtime) cache cluster.
+|    |     ├── --resource-group -g [Required] ............. Name of the resource group
+|    |     ├── --name --cluster-name -n [Required] ............. The name of the RedisEnterprise cluster.
+|    |     ├── --location -l ............. Location.
+|    |     ├── --public-network-access ............. Whether or not public network traffic can access the Redis cluster.
+|    |     ├── --no-database ............. Advanced. Do not automatically create a default database.
+|    |     ├── --no-wait .............  Do not wait for the long-running operation to finish.
+|    |     └── --sku [Required] ............. The type of RedisEnterprise cluster to deploy.
+|    └──  database ...................... Manage Redis Enterprise databases.
+|          ├── show ............. Get information about a database in a RedisEnterprise cluster.
 |          |    ├── --resource-group -g ........ Name of resource group.
-|          |    ├── --cluster-name ........ Name of the server.
-|          |    ├── --query ........ The name of the server configuration.
-|          |    └── --output -o ........ Value of the configuration.
-|          ├── update ............. Update the parameter of a flexible server.
+|          |    ├── --cluster-name ........ The name of the RedisEnterprise cluster.
+|          |    ├── --query ........ JMESPath query string.
+|          |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|          ├── update ............. Update a database.
 |          |    ├── --resource-group -g ........ Name of resource group.
-|          |    ├── --cluster-name ........ Name of the server.
-|          |    ├── --query ........ The name of the server configuration.
-|          |    └── --access-keys-auth ........ Value of the configuration.
-|          ├── create ............. Update the parameter of a flexible server.
+|          |    ├── --cluster-name ........ The name of the RedisEnterprise cluster.
+|          |    ├── --query ........ JMESPath query string.
+|          |    └── --access-keys-auth --access-keys-authentication ........ Access database using keys - default is enabled.
+|          ├── create ............. Create a database.
+|          |    ├── --resource-group -g [Required] ........ Name of resource group.
+|          |    ├── --cluster-name [Required] ........ The name of the RedisEnterprise cluster.
+|          |    ├── --client-protocol ........ Specifies whether redis clients can connect using TLS-encrypted or plaintext redis protocols.
+|          |    ├── --clustering-policy ........ Clustering policy - default is OSSCluster.
+|          |    ├── --eviction-policy ........ Redis eviction policy - default is VolatileLRU.
+|          |    ├── --port ........ TCP port of the database endpoint.
+|          |    └── --access-keys-auth --access-keys-authentication ........ Access database using keys - default is enabled.
+|          ├── list-keys .............  Retrieves the access keys for the RedisEnterprise database.
 |          |    ├── --resource-group -g ........ Name of resource group.
-|          |    ├── --cluster-name ........ Name of the server.
-|          |    ├── --client-protocol ........ The name of the server configuration.
-|          |    ├── --clustering-policy ........ The name of the server configuration.
-|          |    ├── --eviction-policy ........ The name of the server configuration.
-|          |    ├── --port ........ The name of the server configuration.
-|          |    └── --access-keys-auth ........ Value of the configuration.
-|          ├── list-keys ............. Update the parameter of a flexible server.
-|          |    ├── --resource-group -g ........ Name of resource group.
-|          |    ├── --cluster-name ........ Name of the server.
-|          |    ├── --query ........ The name of the server configuration.
-|          |    └── --output -o ........ Value of the configuration.
+|          |    ├── --cluster-name ........ The name of the RedisEnterprise cluster.
+|          |    ├── --query ........ JMESPath query string.
+|          |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ```
 
 ## Kubectl CLI Breakdown
