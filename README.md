@@ -237,43 +237,73 @@ az
 |    |     ├── --name -n ............. Name of the Cosmos DB database account.
 |    |     ├── --query ............. JMESPath query string.
 |    |     └── --output -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc) 
-│    ├── sql ................................. Manage SQL resources of Azure Cosmos DB account.
-|    |     ├──  database ...................... Manage Azure Cosmos DB SQL databases.
-|    |     |    ├── create ............. Create an SQL database under an Azure Cosmos DB account.
-|    |     |    |   ├── --resource-group -g [Required] ........ Name of resource group.
-|    |     |    |   ├── --account-name -a [Required] ........ Cosmosdb account name.
-|    |     |    |   ├── --name [Required] ........ Database name.
-|    |     |    └── show ............... Show the details of a SQL database under an Azure Cosmos DB account.
-|    |     |        ├── --resource-group [Required] ........ Name of resource group.
-|    |     |        ├── --account-name -a [Required] ........ Cosmosdb account name.
-|    |     |        └── --name [Required] ........ Database name.
-|    |     ├──  container ...................... Manage Azure Cosmos DB SQL containers.
-|    |     |    ├── create ............. Create an SQL container under an Azure Cosmos DB SQL database.
-|    |     |    |   ├── --resource-group -g [Required] ........ Name of resource group.
-|    |     |    |   ├── --account-name -a [Required] ........ Cosmosdb account name.
-|    |     |    |   ├── --database-name [Required] ........ Database name.
-|    |     |    |   ├── --name [Required] ........ Container Name.
-|    |     |    |   ├── --idx ........ Indexing Policy, you can enter it as a string or as a file.
-|    |     |    |   ├── --vector-embeddings ........ Vector Embedding Policy, you can enter it as a string or as a file.
-|    |     |    |   └── --partition-key-path [Required] ........ Partition Key Path, e.g., '/address/zipcode'.
-|    |     |    └── show ............... Show the details of a SQL container under an Azure Cosmos DB SQL database.
-|    |     |        ├── --resource-group [Required] ........ Name of resource group.
-|    |     |        ├── --account-name -a [Required] ........ Cosmosdb account name.
-|    |     |        ├── --database-name [Required] ........ Database name.
-|    |     |        └── --name [Required] ........ Container Name.
-|    |     └──  role ...................... Manage Azure Cosmos DB SQL role resources.
-|    |          ├── assignment ............. Manage Azure Cosmos DB SQL role assignments.
-|    |          |   ├── create ........ Create a SQL role assignment under an Azure Cosmos DB account.
-|    |          |   |   ├── --account-name -a [Required] ........ Cosmosdb account name.
-|    |          |   |   ├── --resource-group [Required] ........ Name of resource group.
-|    |          |   |   ├── --role-definition-name ........ Unique Name of the Role Definition that this Role Assignment refers to.
-|    |          |   |   ├── --principal-id [Required] ........ AAD Object ID of the principal to which this Role Assignment is being granted.
-|    |          |   |   ├── --scope [Required] ........ Data plane resource path at which this Role Assignment is being granted.
-|    |          |   └── list ........ List all SQL role assignments under an Azure Cosmos DB account.
-|    |          |       ├── --resource-group -g [Required] ........ Name of resource group.
-|    |          |       ├── --query ........ JMESPath query string.
-|    |          |       ├── --account-name -a [Required] ........ Cosmosdb account name.
-|    |          |       └── --ouput -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc) 
+│    └── sql ................................. Manage SQL resources of Azure Cosmos DB account.
+|          ├──  database ...................... Manage Azure Cosmos DB SQL databases.
+|          |    ├── create ............. Create an SQL database under an Azure Cosmos DB account.
+|          |    |   ├── --resource-group -g [Required] ........ Name of resource group.
+|          |    |   ├── --account-name -a [Required] ........ Cosmosdb account name.
+|          |    |   ├── --name [Required] ........ Database name.
+|          |    └── show ............... Show the details of a SQL database under an Azure Cosmos DB account.
+|          |        ├── --resource-group [Required] ........ Name of resource group.
+|          |        ├── --account-name -a [Required] ........ Cosmosdb account name.
+|          |        └── --name [Required] ........ Database name.
+|          ├──  container ...................... Manage Azure Cosmos DB SQL containers.
+|          |    ├── create ............. Create an SQL container under an Azure Cosmos DB SQL database.
+|          |    |   ├── --resource-group -g [Required] ........ Name of resource group.
+|          |    |   ├── --account-name -a [Required] ........ Cosmosdb account name.
+|          |    |   ├── --database-name [Required] ........ Database name.
+|          |    |   ├── --name [Required] ........ Container Name.
+|          |    |   ├── --idx ........ Indexing Policy, you can enter it as a string or as a file.
+|          |    |   ├── --vector-embeddings ........ Vector Embedding Policy, you can enter it as a string or as a file.
+|          |    |   └── --partition-key-path [Required] ........ Partition Key Path, e.g., '/address/zipcode'.
+|          |    └── show ............... Show the details of a SQL container under an Azure Cosmos DB SQL database.
+|          |        ├── --resource-group [Required] ........ Name of resource group.
+|          |        ├── --account-name -a [Required] ........ Cosmosdb account name.
+|          |        ├── --database-name [Required] ........ Database name.
+|          |        └── --name [Required] ........ Container Name.
+|          └──  role ...................... Manage Azure Cosmos DB SQL role resources.
+|               └── assignment ............. Manage Azure Cosmos DB SQL role assignments.
+|                   ├── create ........ Create a SQL role assignment under an Azure Cosmos DB account.
+|                   |   ├── --account-name -a [Required] ........ Cosmosdb account name.
+|                   |   ├── --resource-group [Required] ........ Name of resource group.
+|                   |   ├── --role-definition-name ........ Unique Name of the Role Definition that this Role Assignment refers to.
+|                   |   ├── --principal-id [Required] ........ AAD Object ID of the principal to which this Role Assignment is being granted.
+|                   |   ├── --scope [Required] ........ Data plane resource path at which this Role Assignment is being granted.
+|                   └── list ........ List all SQL role assignments under an Azure Cosmos DB account.
+|                       ├── --resource-group -g [Required] ........ Name of resource group.
+|                       ├── --query ........ JMESPath query string.
+|                       ├── --account-name -a [Required] ........ Cosmosdb account name.
+|                       └── --ouput -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+├── postgres .................................. Manage Azure Cosmos DB database accounts.
+│    ├── flexible-server ................................. Manage SQL resources of Azure Cosmos DB account.
+|    |     ├──  create ...................... Manage Azure Cosmos DB SQL databases.
+|    |     |    ├──  ............. Create an SQL database under an Azure Cosmos DB account.
+|    |     |    ├── --resource-group -g [Required] ........ Name of resource group.
+|    |     |    ├── --location ........ Cosmosdb account name.
+|    |     |    ├── --tier ........ Database name.
+|    |     |    ├── --storage-size ........ Database name.
+|    |     |    ├── --version ........ Database name.
+|    |     |    ├── --public-access ........ Database name.
+|    |     |    ├── --microsoft-entra-auth ........ Database name.
+|    |     |    ├── --password-auth ........ Database name.
+|    |     |    ├── --name [Required] ........ Database name.
+|    |     |    └── --sku-name ............... Show the details of a SQL database under an Azure Cosmos DB account.
+|    |     ├──  show ...................... Manage Azure Cosmos DB SQL containers.
+|    |     |    ├── --resource-group -g [Required] ........ Name of resource group.
+|    |     |    ├── --query ........ Name of resource group.
+|    |     |    ├── --output -o ........ Name of resource group.
+|    |     |    └── --name [Required] ........ Container Name.
+|    |     └──  microsoft-entra-admin ...................... Manage Azure Cosmos DB SQL role resources.
+|    |          ├── create ............. Manage Azure Cosmos DB SQL role assignments.
+|    |          |   ├── --resource-group ........ Create a SQL role assignment under an Azure Cosmos DB account.
+|    |          |   ├── --server-name ........ Cosmosdb account name.
+|    |          |   ├── --display-name ........ Name of resource group.
+|    |          |   └── --object-id ........ List all SQL role assignments under an Azure Cosmos DB account.
+|    |          ├── list ............. Manage Azure Cosmos DB SQL role assignments.
+|    |          |   ├── --resource-group ........ Create a SQL role assignment under an Azure Cosmos DB account.
+|    |          |   ├── --server-name ........ Cosmosdb account name.
+|    |          |   ├── --query ........ Name of resource group.
+|    |          |   └── --output -o ........ List all SQL role assignments under an Azure Cosmos DB account.
 ```
 
 ## Kubectl CLI Breakdown
