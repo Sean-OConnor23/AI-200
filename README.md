@@ -31,10 +31,11 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
    - Build a Semantic Search Application With Azure Cosmos DB For NoSQL
    - Optimize Query Performance With Vector Indexes on Azure Cosmos DB For NoSQL
         - Index Types Table
-           | Index Type | Search Method | Best For |
-           | --- | --- | --- |
-           | Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 | 
-           | Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
+           | Index Type | Search Method | Best For | Trade-Offs |
+           | --- | --- | --- | --- |
+           | Flat | Exact nearest neighbor | Small datasets, Highest accuracy | Higher RU for large datasets | 
+           | quantizedFlat | Compressed exact search | Medium datasets, Memory efficiency | Slight accuracy loss |
+           | diskANN | Approximate graph search | Large datasets, Production | ~95% recall, Best performance |
 ## Az CLI Breakdown
 ```text
 az
