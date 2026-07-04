@@ -11,7 +11,7 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
    - Deploy a Containerized Backend API to Container Apps
    - Diagnose and Fix a Failing Deployment
    - Configure Autoscaling Using KEDA Triggers
-5. Azure Kubernetes Service
+4. Azure Kubernetes Service
    - Deploy an AI Inference API to Azure Kubernetes Service
    - Configure apps on Azure Kubernetes Service
       - Different Deployment Files
@@ -21,7 +21,7 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
          * deployment.yaml --> Contains environment variables, volume mounts, and probes
          * service.yaml --> Exposes application pods to network traffic
    - Troubleshoot apps on Azure Kubernetes Service
-6. Azure Cosmos DB For NoSQL
+5. Azure Cosmos DB For NoSQL
    - Build a RAG Document Store on Azure Cosmos DB For NoSQL
         - Common RAG Patterns:
            * Point Reads --> Retrieve a specific chunk by ID and document ID (lowest latency)
@@ -36,7 +36,7 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
            | Flat | Exact nearest neighbor | Small datasets, Highest accuracy | Higher RU for large datasets | 
            | quantizedFlat | Compressed exact search | Medium datasets, Memory efficiency | Slight accuracy loss |
            | diskANN | Approximate graph search | Large datasets, Production | ~95% recall, Best performance |
-7. Azure Database For PostgreSQL
+6. Azure Database For PostgreSQL
    - Build an Agent Tool Backend on Azure Database For PostgreSQL
    - Implement Vector Search on Azure Database For PostgreSQL
    - Optimize Vector Search Performance in Azure Database For PostgreSQL
@@ -57,6 +57,9 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
            | Memory Usage | Lower | Higher |
            | Recall Accuracy | Good with tuning | Better out of box |
            | Update Performance | Requires rebuilding | Supports incremental |
+7. Azure Managed Redis
+   - 
+
           
 ## Az CLI Breakdown
 ```text
