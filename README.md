@@ -30,6 +30,8 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
            * Vector Search --> When combined with vector indexing
    - Build a Semantic Search Application With Azure Cosmos DB For NoSQL
    - Optimize Query Performance With Vector Indexes on Azure Cosmos DB For NoSQL
+        - Index Types Table
+        -    | Index Type | Search Method | Best For | Trade-Offs |
 
 ## Az CLI Breakdown
 ```text
