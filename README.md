@@ -292,6 +292,13 @@ az
 |          |    ├── --query ........ JMESPath query string.
 |          |    ├── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 |          |    └── --name -n ........ Name of the server.
+|          ├──  parameter ...................... Commands for managing server parameter values for flexible servers.
+|          |    └── set ............. Update the parameter of a flexible server.
+|          |        ├── --resource-group -g ........ Name of resource group.
+|          |        ├── --server-name -s ........ Name of the server.
+|          |        ├── --name -n ........ The name of the server configuration.
+|          |        ├── --source ........ Source of the configuration.
+|          |        └── --value -v ........ Value of the configuration.
 |          └──  microsoft-entra-admin ...................... Manage server Microsoft Entra administrators.
 |               ├── create ............. Create a Microsoft Entra administrator.
 |               |   ├── --resource-group -g [Required] ........ Name of resource group.
