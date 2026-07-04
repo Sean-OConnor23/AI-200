@@ -58,7 +58,9 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
            | Recall Accuracy | Good with tuning | Better out of box |
            | Update Performance | Requires rebuilding | Supports incremental |
 7. Azure Managed Redis
-   - 
+   - Perform Data Operations in Azure Managed Redis
+   - Publish and Subscribe to Events in Azure Managed Redis
+   - Implement Semantic Search in Azure Managed Redis
 
           
 ## Az CLI Breakdown
@@ -378,6 +380,7 @@ kubectl
 9. Microsoft.Storage
 10. Microsoft.DocumentDB
 11. Microsoft.DBforPostgreSQL
+12. Microsoft.Cache
 
 <!-- Copy/Paste to edit ASCII Tree
 ├──  (Middle item)
