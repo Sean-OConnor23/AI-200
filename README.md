@@ -36,6 +36,10 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
            | Flat | Exact nearest neighbor | Small datasets, Highest accuracy | Higher RU for large datasets | 
            | quantizedFlat | Compressed exact search | Medium datasets, Memory efficiency | Slight accuracy loss |
            | diskANN | Approximate graph search | Large datasets, Production | ~95% recall, Best performance |
+7. Azure Database For PostgreSQL
+   - Build an Agent Tool Backend on Azure Database For PostgreSQL
+   - Implement Vector Search on Azure Database For PostgreSQL
+   - Optimize Vector Search Performance in Azure Database For PostgreSQL
 ## Az CLI Breakdown
 ```text
 az
