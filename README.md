@@ -333,6 +333,44 @@ az
 |               |   ├── --server-name -s ........ Name of the server.
 |               |   ├── --query ........ JMESPath query string.
 |               |   └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+├── redisenterprise .................................. Manage Azure Cosmos DB database accounts.
+│    ├── show .............................. Creates a new Azure Cosmos DB database account.
+|    |     ├── --resource-group -g [Required] ............. Name of the resource group.
+|    |     ├── --output -o ............. Set custom capabilities on the Cosmos DB database account.
+|    |     ├── --query ............. Default consistency level of the Cosmos DB database account. 
+|    |     └── --name -n [Required] ............... Name of the Cosmos DB database account.
+│    ├── create .............................. Get the details of an Azure Cosmos DB database account.
+|    |     ├── --resource-group -g ............. Name of the resource group
+|    |     ├── --name -n ............. Name of the Cosmos DB database account.
+|    |     ├── --location ............. JMESPath query string.
+|    |     ├── --public-network-access ............. JMESPath query string.
+|    |     ├── --no-database ............. JMESPath query string.
+|    |     ├── --no-wait ............. JMESPath query string.
+|    |     └── --sku ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    └──  database ...................... Commands for managing server parameter values for flexible servers.
+|          ├── show ............. Update the parameter of a flexible server.
+|          |    ├── --resource-group -g ........ Name of resource group.
+|          |    ├── --cluster-name ........ Name of the server.
+|          |    ├── --query ........ The name of the server configuration.
+|          |    └── --output -o ........ Value of the configuration.
+|          ├── update ............. Update the parameter of a flexible server.
+|          |    ├── --resource-group -g ........ Name of resource group.
+|          |    ├── --cluster-name ........ Name of the server.
+|          |    ├── --query ........ The name of the server configuration.
+|          |    └── --access-keys-auth ........ Value of the configuration.
+|          ├── create ............. Update the parameter of a flexible server.
+|          |    ├── --resource-group -g ........ Name of resource group.
+|          |    ├── --cluster-name ........ Name of the server.
+|          |    ├── --client-protocol ........ The name of the server configuration.
+|          |    ├── --clustering-policy ........ The name of the server configuration.
+|          |    ├── --eviction-policy ........ The name of the server configuration.
+|          |    ├── --port ........ The name of the server configuration.
+|          |    └── --access-keys-auth ........ Value of the configuration.
+|          ├── list-keys ............. Update the parameter of a flexible server.
+|          |    ├── --resource-group -g ........ Name of resource group.
+|          |    ├── --cluster-name ........ Name of the server.
+|          |    ├── --query ........ The name of the server configuration.
+|          |    └── --output -o ........ Value of the configuration.
 ```
 
 ## Kubectl CLI Breakdown
