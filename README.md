@@ -40,6 +40,24 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
    - Build an Agent Tool Backend on Azure Database For PostgreSQL
    - Implement Vector Search on Azure Database For PostgreSQL
    - Optimize Vector Search Performance in Azure Database For PostgreSQL
+        - IVFFlat Indexes --> divides vectors into clusters called lists
+           - Key parameters
+                - lists: Number of clusters to create. More lists means faster searches but slower index builds.
+                - probes: Number of clusters to search at query time. Higher values improve recall but increase latency.
+        - HNSW Indexes --> builds a multi-layer graph structure
+           - Key parameters
+                - m: Maximum connections per node. Higher values improve recall but increase memory usage and build time.
+                - ef_construction: Size of the dynamic candidate list during index building. Higher values create better quality graphs but take longer to build.
+                - ef_search: Size of the dynamic candidate list during search. Higher values improve recall but increase latency.
+        - When To Use:
+           | Consideration | IVFFlat | HNSW |
+           | --- | --- | --- |
+           | Build Time | Faster | Slower |
+           | Query Speed | Fast | Faster |
+           | Memory Usage | Lower | Higher |
+           | Recall Accuracy | Good with tuning | Better out of box |
+           | Update Performance | Requires rebuilding | Supports incremental |
+          
 ## Az CLI Breakdown
 ```text
 az
