@@ -60,6 +60,14 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
 7. Azure Managed Redis
    - Perform Data Operations in Azure Managed Redis
    - Publish and Subscribe to Events in Azure Managed Redis
+     - Subscribing/Publishing Options Table
+        | Subscriber Option | Description |
+        | --- | --- |
+        | Subscribe To Channel | Subscribes to a single channel |
+        | Subscribe With Pattern | Subscribe to multiple channels |
+        | Unsubscribe From Channel | Unsubscribe from a single channel |
+        | Unsubscribe All | Unsubscribe from all channels |
+        | View Active Subscriptions | List all of the subscribed channels |
    - Implement Semantic Search in Azure Managed Redis
 
           
