@@ -427,6 +427,7 @@ kubectl
 10. Microsoft.DocumentDB
 11. Microsoft.DBforPostgreSQL
 12. Microsoft.Cache
+13. Microsoft.ServiceBus
 
 <!-- Copy/Paste to edit ASCII Tree
 ├──  (Middle item)
