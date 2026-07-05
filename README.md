@@ -379,6 +379,72 @@ az
 |          |    ├── --cluster-name ........ The name of the RedisEnterprise cluster.
 |          |    ├── --query ........ JMESPath query string.
 |          |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+├── servicebus .................................. Servicebus.
+|    ├──  namespace ...................... Servicebus namespace.
+|    |     ├── show ............. Get a description for the specified namespace.
+|    |     |    ├── --resource-group -g ........ Name of resource group.
+|    |     |    ├── --name --namespace-name -n ........ The namespace name.
+|    |     |    ├── --query ........ JMESPath query string.
+|    |     |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    ├──  queue ...................... Servicebus queue.
+|    |     ├── show ............. Get a description for the specified queue.
+|    |     |    ├── --resource-group -g ........ Name of resource group.
+|    |     |    ├── --name --queue-name -n ........ The queue name.
+|    |     |    ├── --namespace-name ........ The namespace name.
+|    |     |    ├── --query ........ JMESPath query string.
+|    |     |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |     └── create ............. Create a Service Bus queue. This operation is idempotent.
+|    |          ├── --resource-group -g [Required] ........ Name of resource group.
+|    |          ├── --name --queue-name -n [Required] ........ The queue name.
+|    |          ├── --namespace-name [Required] ........ The namespace name.
+|    |          ├── --enable-dead-lettering-on-message-expiration --message-expiration ........ A value that indicates whether this queue has dead letter support when a message expires.
+|    |          └── --max-delivery-count ........ The maximum delivery count. A message is automatically deadlettered after this number of deliveries.
+|    └──  topic ...................... Servicebus topic.
+|          ├── show ............. Get a description for the specified topic.
+|          |    ├── --resource-group -g ........ Name of resource group.
+|          |    ├── --name --topic-name -n ........ The topic name.
+|          |    ├── --namespace-name ........ The namespace name.
+|          |    ├── --query ........ JMESPath query string.
+|          |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|          ├── create .............  Create a topic in the specified namespace.
+|          |    ├── --resource-group -g [Required] ........ Name of resource group.
+|          |    ├── --name --topic-name -n [Required] ........ The topic name.
+|          |    └── --namespace-name [Required] ........ The namespace name.
+|          └── subscription .............  Servicebus topic subscription.
+|               ├── show ........ Get a subscription description for the specified topic.
+|               |    ├── --name --subscription-name -n ........ The subscription name.
+|               |    ├── --topic-name ........ The topic name.
+|               |    ├── --resource-group -g ........ Name of resource group.
+|               |    ├── --query ........ JMESPath query string.
+|               |    ├── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|               |    └── --namespace-name ........ The namespace name.
+|               ├── create ........ Create a topic subscription.
+|               |    ├── --name --subscription-name -n ........ The subscription name.
+|               |    ├── --topic-name ........ The topic name.
+|               |    ├── --resource-group -g ........ Name of resource group.
+|               |    └── --namespace-name ........ The namespace name.
+|               └── rule ........ Servicebus topic subscription rule.
+|                    ├── show ........ Get the description for the specified rule.
+|                    |    ├── --name --rule-name -n ........ The rule name.
+|                    |    ├── --topic-name ........ The topic name.
+|                    |    ├── --subscription-name ........ The subscription name.
+|                    |    ├── --resource-group ........ Name of resource group.
+|                    |    ├── --query ........ JMESPath query string.
+|                    |    ├── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|                    |    └── --namespace-name ........ The namespace name.
+|                    ├── create ........ Create the ServiceBus Rule for Subscription.
+|                    |    ├── --name --rule-name -n [Required] ........ The rule name.
+|                    |    ├── --topic-name [Required] ........ The topic name.
+|                    |    ├── --subscription-name [Required] ........ The subscription name.
+|                    |    ├── --resource-group -g [Required] ........ Name of resource group.
+|                    |    ├── --filter-sql-expression ........ SQL expression.
+|                    |    └── --namespace-name [Required] ........ The namespace name.
+|                    └── delete ........ Delete an existing rule.
+|                         ├── --name --rule-name -n [Required] ........ The rule name.
+|                         ├── --topic-name [Required] ........ The topic name.
+|                         ├── --subscription-name [Required] ........ The subscription name.
+|                         ├── --resource-group -g [Required] ........ Name of resource group.
+|                         └── --namespace-name [Required] ........ The namespace name.
 ```
 
 ## Kubectl CLI Breakdown
