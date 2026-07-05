@@ -445,46 +445,46 @@ az
 |                         ├── --subscription-name [Required] ........ The subscription name.
 |                         ├── --resource-group -g [Required] ........ Name of resource group.
 |                         └── --namespace-name [Required] ........ The namespace name.
-├── eventgrid .................................. Servicebus.
-|    ├──  namespace ...................... Servicebus namespace.
-|    |     ├── create ............. Get a description for the specified queue.
-|    |     |    ├── --resource-group -g ........ Name of resource group.
-|    |     |    ├── --name --queue-name -n ........ The queue name.
-|    |     |    ├── --location ........ The namespace name.
-|    |     |    └── --sku........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
-|    |     └── show ............. Get a description for the specified namespace.
-|    |          ├── --resource-group -g ........ Name of resource group.
-|    |          ├── --name --namespace-name -n ........ The namespace name.
-|    |          ├── --query ........ The namespace name.
-|    |          ├── --output -o ........ The namespace name.
-|          └── topic .............  Servicebus topic subscription.
-|               ├── show ........ Get a subscription description for the specified topic.
-|               |    ├── --name --subscription-name -n ........ The subscription name.
+├── eventgrid ..................................  Manage Azure Event Grid topics, domains, domain topics, system topics, partner topics, event subscriptions system topic event subscriptions, partner topic event subscriptions, and namespaces.
+|    └──  namespace ...................... anage eventgrid namespace.
+|          ├── create ............. Create a new namespace.
+|          |    ├── --resource-group -g [Required] ........ Name of resource group.
+|          |    ├── --name --namespace-name -n [Required] ........ Name of the namespace.
+|          |    ├── --location -l ........ Location of the resource.
+|          |    └── --sku........ Represents available Sku pricing tiers.
+|          ├── show ............. Show a namespace.
+|          |    ├── --resource-group -g ........ Name of resource group.
+|          |    ├── --name --namespace-name -n ........ The namespace name.
+|          |    ├── --query ........ JMESPath query string.
+|          |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|          └── topic .............  Manage eventgrid namespace topic.
+|               ├── show ........ Show a namespace topic.
+|               |    ├── --name --topic-name -n ........ Name of the namespace topic.
 |               |    ├── --resource-group -g ........ Name of resource group.
 |               |    └── --namespace-name ........ The namespace name.
-|               ├── create ........ Get a subscription description for the specified topic.
-|               |    ├── --name --subscription-name -n ........ The subscription name.
-|               |    ├── --resource-group -g ........ Name of resource group.
-|               |    ├── --event-retention-in-days ........ Name of resource group.
-|               |    ├── --publisher-type ........ Name of resource group.
-|               |    ├── --input-schema ........ Name of resource group.
-|               |    └── --namespace-name ........ The namespace name.
-|               ├── event-subscription ........ Get a subscription description for the specified topic.
-|               |    ├── show ........ The subscription name.
-|               |         ├── --resource-group -g ........ Name of resource group.
-|               |         ├── --topic-name ........ Name of resource group.
-|               |         ├── --name ........ Name of resource group.
-|               |         ├── --query ........ Name of resource group.
-|               |         ├── --output -o ........ Name of resource group.
-|               |         └── --namespace-name ........ The namespace name.
-|               |    ├── create ........ The subscription name.
-|               |         ├── --resource-group -g ........ Name of resource group.
-|               |         ├── --topic-name ........ Name of resource group.
-|               |         ├── --name ........ Name of resource group.
-|               |         ├── --delivery-configuration ........ Name of resource group.
-|               |         ├── --event-delivery-schema ........ Name of resource group.
-|               |         ├── --filters-configuration ........ Name of resource group.
-|               |         └── --namespace-name ........ The namespace name.
+|               ├── create ........ Create a new namespace topic.
+|               |    ├── --name --topic-name -n [Required] ........ Name of the namespace topic.
+|               |    ├── --resource-group -g [Required] ........ Name of resource group.
+|               |    ├── --event-retention-in-days ........ Event retention for the namespace topic expressed in days.
+|               |    ├── --publisher-type ........ Publisher type of the namespace topic.
+|               |    ├── --input-schema ........ This determines the format that is expected for incoming events published to the topic.
+|               |    └── --namespace-name [Required] ........ The namespace name.
+|               └── event-subscription ........ Manage eventgrid namespace topic event subscription.
+|                    ├── show ........ Show an event subscription of a namespace topic.
+|                    |    ├── --resource-group -g ........ Name of resource group.
+|                    |    ├── --topic-name ........ Name of the namespace topic.
+|                    |    ├── --name --event-subscription-name -n ........ Name of the event subscription to be created.
+|                    |    ├── --query ........ JMESPath query string.
+|                    |    ├── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|                    |    └── --namespace-name ........ The namespace name.
+|                    └── create ........ Create an event subscription of a namespace topic.
+|                         ├── --resource-group -g ........ Name of resource group.
+|                         ├── --topic-name ........ Name of the namespace topic.
+|                         ├── --name --event-subscription-name -n ........ Name of the event subscription to be created.
+|                         ├── --delivery-configuration ........ Information about the delivery configuration of the event subscription. 
+|                         ├── --event-delivery-schema ........ The event delivery schema for the event subscription.
+|                         ├── --filters-configuration ........ Information about the filter for the event subscription.
+|                         └── --namespace-name ........ The namespace name.
 ```
 
 ## Kubectl CLI Breakdown
