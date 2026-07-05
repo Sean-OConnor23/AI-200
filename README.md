@@ -381,11 +381,11 @@ az
 |          |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ├── servicebus .................................. Servicebus.
 |    ├──  namespace ...................... Servicebus namespace.
-|    |     ├── show ............. Get a description for the specified namespace.
-|    |     |    ├── --resource-group -g ........ Name of resource group.
-|    |     |    ├── --name --namespace-name -n ........ The namespace name.
-|    |     |    ├── --query ........ JMESPath query string.
-|    |     |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |     └── show ............. Get a description for the specified namespace.
+|    |          ├── --resource-group -g ........ Name of resource group.
+|    |          ├── --name --namespace-name -n ........ The namespace name.
+|    |          ├── --query ........ JMESPath query string.
+|    |          └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 |    ├──  queue ...................... Servicebus queue.
 |    |     ├── show ............. Get a description for the specified queue.
 |    |     |    ├── --resource-group -g ........ Name of resource group.
@@ -445,6 +445,46 @@ az
 |                         ├── --subscription-name [Required] ........ The subscription name.
 |                         ├── --resource-group -g [Required] ........ Name of resource group.
 |                         └── --namespace-name [Required] ........ The namespace name.
+├── eventgrid .................................. Servicebus.
+|    ├──  namespace ...................... Servicebus namespace.
+|    |     ├── create ............. Get a description for the specified queue.
+|    |     |    ├── --resource-group -g ........ Name of resource group.
+|    |     |    ├── --name --queue-name -n ........ The queue name.
+|    |     |    ├── --location ........ The namespace name.
+|    |     |    └── --sku........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |     └── show ............. Get a description for the specified namespace.
+|    |          ├── --resource-group -g ........ Name of resource group.
+|    |          ├── --name --namespace-name -n ........ The namespace name.
+|    |          ├── --query ........ The namespace name.
+|    |          ├── --output -o ........ The namespace name.
+|          └── topic .............  Servicebus topic subscription.
+|               ├── show ........ Get a subscription description for the specified topic.
+|               |    ├── --name --subscription-name -n ........ The subscription name.
+|               |    ├── --resource-group -g ........ Name of resource group.
+|               |    └── --namespace-name ........ The namespace name.
+|               ├── create ........ Get a subscription description for the specified topic.
+|               |    ├── --name --subscription-name -n ........ The subscription name.
+|               |    ├── --resource-group -g ........ Name of resource group.
+|               |    ├── --event-retention-in-days ........ Name of resource group.
+|               |    ├── --publisher-type ........ Name of resource group.
+|               |    ├── --input-schema ........ Name of resource group.
+|               |    └── --namespace-name ........ The namespace name.
+|               ├── event-subscription ........ Get a subscription description for the specified topic.
+|               |    ├── show ........ The subscription name.
+|               |         ├── --resource-group -g ........ Name of resource group.
+|               |         ├── --topic-name ........ Name of resource group.
+|               |         ├── --name ........ Name of resource group.
+|               |         ├── --query ........ Name of resource group.
+|               |         ├── --output -o ........ Name of resource group.
+|               |         └── --namespace-name ........ The namespace name.
+|               |    ├── create ........ The subscription name.
+|               |         ├── --resource-group -g ........ Name of resource group.
+|               |         ├── --topic-name ........ Name of resource group.
+|               |         ├── --name ........ Name of resource group.
+|               |         ├── --delivery-configuration ........ Name of resource group.
+|               |         ├── --event-delivery-schema ........ Name of resource group.
+|               |         ├── --filters-configuration ........ Name of resource group.
+|               |         └── --namespace-name ........ The namespace name.
 ```
 
 ## Kubectl CLI Breakdown
