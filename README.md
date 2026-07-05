@@ -494,6 +494,7 @@ kubectl
 11. Microsoft.DBforPostgreSQL
 12. Microsoft.Cache
 13. Microsoft.ServiceBus
+14. Microsoft.EventGrid
 
 <!-- Copy/Paste to edit ASCII Tree
 ├──  (Middle item)
