@@ -69,6 +69,12 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
         | Unsubscribe All | Unsubscribe from all channels |
         | View Active Subscriptions | List all of the subscribed channels |
    - Implement Semantic Search in Azure Managed Redis
+8. Azure Service Bus
+   - Process Messages With Azure Service Bus
+9. Azure Event Grid
+   - Publish and Receive Events With Azure Event Grid 
+10. Azure Functions
+   - Create an MCP server with Azure Functions
 
           
 ## Az CLI Breakdown
