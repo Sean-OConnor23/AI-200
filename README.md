@@ -74,7 +74,7 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
 9. Azure Event Grid
    - Publish and Receive Events With Azure Event Grid 
 10. Azure Functions
-   - Create an MCP server with Azure Functions
+    - Create an MCP server with Azure Functions
 
           
 ## Az CLI Breakdown
