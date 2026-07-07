@@ -22,6 +22,8 @@ def summarize_text(context: str) -> str:
     logging.info(f"summarize_text parsed request: {request}")
     # Extract the tool arguments from the request
     arguments = request.get("arguments", {})
+
+    
     # Retrieve the "text" property defined in toolProperties
     text = arguments.get("text", "")
 
