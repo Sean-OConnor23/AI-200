@@ -519,9 +519,37 @@ az
 |          |    ├── --value ........ Plain text secret value.
 |          |    ├── --tags ........ Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.
 |          |    └── --content-type --description ........ Description of the secret contents
-|          ├── show ............. Get a specified secret from a given key vault.
-|          |    ├── --vault-name ........ Name of the Key Vault. Required if --id is not specified.
-|          |    ├── --name -n [Required] ........ Name of the secret. Required if --id is not specified.
+|          └── show ............. Get a specified secret from a given key vault.
+|               ├── --vault-name ........ Name of the Key Vault. Required if --id is not specified.
+|               ├── --name -n [Required] ........ Name of the secret. Required if --id is not specified.
+|               ├── --query ........ JMESPath query string.
+|               └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+├── appconfig ..................................  Manage App Configurations. 
+│    ├── show .............................. Show properties of an App Configuration store.
+|    |     ├── --resource-group -g ............. Name of the resource group.
+|    |     ├── --query ............. JMESPath query string.
+|    |     ├── --output -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |     └── --name -n [Required] ............... Name of the App Configuration store.
+│    ├── create .............................. Create an App Configuration.
+|    |     ├── --resource-group -g [Required] ............. Name of the resource group
+|    |     ├── --name -n [Required] ............. Name of the App Configuration store.
+|    |     ├── --location -l [Required] ............. Location.
+|    |     └── --sku ............. The sku of the App Configuration store.
+|    └──  kv ...................... Manage key-values stored in an App Configuration store.
+|          ├── set ............. Set a key-value.
+|          |    ├── --name -n ........ Name of the App Configuration store.
+|          |    ├── --value ........ Value of the key-value to be set.
+|          |    ├── --yes -y ........ Do not prompt for confirmation.
+|          |    ├── --label ........ If no label specified, set the key with null label by default.
+|          |    └── --key [Required] ........ Key to be set.
+|          ├── set-keyvault ............. Set a keyvault reference.
+|          |    ├── --name -n ........ Name of the App Configuration store.
+|          |    ├── --secret-identifier [Required] ........ ID of the Key Vault object.
+|          |    ├── --yes ........ Do not prompt for confirmation.
+|          |    └── --key [Required] ........ Key to be set.
+|          ├── list ............. List key-values.
+|          |    ├── --name -n ........ Name of the App Configuration store.
+|          |    ├── --key ........ If no key specified, return all keys by default.
 |          |    ├── --query ........ JMESPath query string.
 |          |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ```
