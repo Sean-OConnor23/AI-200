@@ -541,6 +541,7 @@ kubectl
 12. Microsoft.Cache
 13. Microsoft.ServiceBus
 14. Microsoft.EventGrid
+15. Microsoft.KeyVault
 
 <!-- Copy/Paste to edit ASCII Tree
 ├──  (Middle item)
