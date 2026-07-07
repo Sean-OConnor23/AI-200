@@ -342,11 +342,11 @@ az
 |               |   ├── --server-name -s [Required] ........ Name of the server.
 |               |   ├── --display-name -u [Required] ........ Display name of the Microsoft Entra administrator user or group.
 |               |   └── --object-id -i [Required] ........ The unique ID of the Microsoft Entra administrator.
-|               ├── list ............. List all Microsoft Entra administrators.
-|               |   ├── --resource-group -g ........ Name of resource group.
-|               |   ├── --server-name -s ........ Name of the server.
-|               |   ├── --query ........ JMESPath query string.
-|               |   └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|               └── list ............. List all Microsoft Entra administrators.
+|                   ├── --resource-group -g ........ Name of resource group.
+|                   ├── --server-name -s ........ Name of the server.
+|                   ├── --query ........ JMESPath query string.
+|                   └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ├── redisenterprise .................................. Manage the redisenterprise cache.
 │    ├── show .............................. Get information about a RedisEnterprise cluster.
 |    |     ├── --resource-group -g ............. Name of the resource group.
@@ -380,11 +380,11 @@ az
 |          |    ├── --eviction-policy ........ Redis eviction policy - default is VolatileLRU.
 |          |    ├── --port ........ TCP port of the database endpoint.
 |          |    └── --access-keys-auth --access-keys-authentication ........ Access database using keys - default is enabled.
-|          ├── list-keys .............  Retrieves the access keys for the RedisEnterprise database.
-|          |    ├── --resource-group -g ........ Name of resource group.
-|          |    ├── --cluster-name ........ The name of the RedisEnterprise cluster.
-|          |    ├── --query ........ JMESPath query string.
-|          |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|          └── list-keys .............  Retrieves the access keys for the RedisEnterprise database.
+|               ├── --resource-group -g ........ Name of resource group.
+|               ├── --cluster-name ........ The name of the RedisEnterprise cluster.
+|               ├── --query ........ JMESPath query string.
+|               └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ├── servicebus .................................. Servicebus.
 |    ├──  namespace ...................... Servicebus namespace.
 |    |     └── show ............. Get a description for the specified namespace.
