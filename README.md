@@ -75,6 +75,10 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
    - Publish and Receive Events With Azure Event Grid 
 10. Azure Functions
     - Create an MCP server with Azure Functions
+11. Azure Key Vault
+    - Manage Secrets With Azure Key Vault
+13. Azure App Configuration
+    - Retrieve Settings and Secrets From Azure App Configuration
 
           
 ## Az CLI Breakdown
