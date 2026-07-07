@@ -491,6 +491,35 @@ az
 |                         ├── --event-delivery-schema ........ The event delivery schema for the event subscription.
 |                         ├── --filters-configuration ........ Information about the filter for the event subscription.
 |                         └── --namespace-name ........ The namespace name.
+├── keyvault ..................................  Manage KeyVault keys, secrets, and certificates. 
+│    ├── show .............................. Show details of a Vault or HSM.
+|    |     ├── --resource-group -g ............. Name of the resource group.
+|    |     ├── --query ............. JMESPath query string.
+|    |     ├── --output -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |     └── --name -n ............... Name of the Vault.
+│    ├── show-deleted .............................. Show details of a deleted Vault or HSM.
+|    |     ├── --query ............. JMESPath query string.
+|    |     ├── --output -o ............. Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|    |     └── --name -n ............... Name of the Vault.
+│    ├── recover .............................. Recover a Vault or HSM.
+|    |     └── --name -n ............... Name of the deleted Vault.
+│    ├── create .............................. Create a Vault or HSM.
+|    |     ├── --resource-group -g [Required] ............. Name of the resource group
+|    |     ├── --name -n ............. Name of the Vault.
+|    |     ├── --location -l ............. Location.
+|    |     └── --enable-rbac-authorization ............. Property that controls how data actions are authorized.
+|    └──  secret ...................... Manage secrets.
+|          ├── set ............. Create a secret (if one doesn't exist) or update a secret in a KeyVault.
+|          |    ├── --vault-name [Required] ........ Name of the vault.
+|          |    ├── --name -n [Required] ........ Name of the secret.
+|          |    ├── --value ........ Plain text secret value.
+|          |    ├── --tags ........ Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.
+|          |    └── --content-type --description ........ Description of the secret contents
+|          ├── show ............. Get a specified secret from a given key vault.
+|          |    ├── --vault-name ........ Name of the Key Vault. Required if --id is not specified.
+|          |    ├── --name -n [Required] ........ Name of the secret. Required if --id is not specified.
+|          |    ├── --query ........ JMESPath query string.
+|          |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ```
 
 ## Kubectl CLI Breakdown
