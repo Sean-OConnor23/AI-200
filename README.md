@@ -79,6 +79,8 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
     - Manage Secrets With Azure Key Vault
 13. Azure App Configuration
     - Retrieve Settings and Secrets From Azure App Configuration
+14. Azure Monitor
+    - Instrument An App with OpenTelemetry
 
           
 ## Az CLI Breakdown
@@ -547,11 +549,23 @@ az
 |          |    ├── --secret-identifier [Required] ........ ID of the Key Vault object.
 |          |    ├── --yes ........ Do not prompt for confirmation.
 |          |    └── --key [Required] ........ Key to be set.
-|          ├── list ............. List key-values.
-|          |    ├── --name -n ........ Name of the App Configuration store.
-|          |    ├── --key ........ If no key specified, return all keys by default.
-|          |    ├── --query ........ JMESPath query string.
-|          |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|          └── list ............. List key-values.
+|               ├── --name -n ........ Name of the App Configuration store.
+|               ├── --key ........ If no key specified, return all keys by default.
+|               ├── --query ........ JMESPath query string.
+|               └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+├── monitor ..................................  Manage the Azure Monitor Service.
+|    └──  app-insights ...................... Commands for querying data in Application Insights applications.
+|          └── component ............. Manage an Application Insights component or its subcomponents.
+|               ├── show ........ Get an Application Insights resource.
+|               |    ├── --resource-group -g ........ Name of resource group.
+|               |    ├── --app -a ........ GUID, app name, or fully-qualified Azure resource name of Application Insights component.
+|               |    ├── --query ........ JMESPath query string.
+|               |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+|               └── create ........ Create a new Application Insights resource.
+|                    ├── --resource-group -g [Required] ........ Name of resource group.
+|                    ├── --app -a [Required] ........ GUID, app name, or fully-qualified Azure resource name of Application Insights component.
+|                    └── --location -l [Required] ........ Location.
 ```
 
 ## Kubectl CLI Breakdown
