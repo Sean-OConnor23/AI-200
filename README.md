@@ -81,6 +81,7 @@ Coding Exercises found within the Microsoft Learn path of the AI-200 exam
     - Retrieve Settings and Secrets From Azure App Configuration
 14. Azure Monitor
     - Instrument An App with OpenTelemetry
+    - Query Logs With KQL
 
           
 ## Az CLI Breakdown
@@ -96,12 +97,6 @@ az
 |               ├── --assignee ... Represent a user, group, or service principal. supported format: object id, user sign-in name, or service principal name.
 |               ├── --scope [Required] ....  Scope at which the role assignment or definition applies to.
 |               └── --role [Required] ..... Role name or id.
-├── monitor .................................. Manage the Azure Monitor Service.
-│   └── log-analytics .............................. Manage Azure log analytics.
-│         └── query ....... Query a Log Analytics workspace.
-|               ├── --workspace -w [Required] ... GUID of Log Analytics workspace
-|               ├── --analytics-query [Required] .... Query to execute over Log Analytics data.
-|               └── --output -o ..... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
 ├── extension .................................. Manage and update CLI extensions.
 │   └── add .............................. Add an extension.
 │         └── --name ....... Name of extension
@@ -554,18 +549,48 @@ az
 |               ├── --key ........ If no key specified, return all keys by default.
 |               ├── --query ........ JMESPath query string.
 |               └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
-├── monitor ..................................  Manage the Azure Monitor Service.
-|    └──  app-insights ...................... Commands for querying data in Application Insights applications.
-|          └── component ............. Manage an Application Insights component or its subcomponents.
-|               ├── show ........ Get an Application Insights resource.
-|               |    ├── --resource-group -g ........ Name of resource group.
-|               |    ├── --app -a ........ GUID, app name, or fully-qualified Azure resource name of Application Insights component.
-|               |    ├── --query ........ JMESPath query string.
-|               |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
-|               └── create ........ Create a new Application Insights resource.
-|                    ├── --resource-group -g [Required] ........ Name of resource group.
-|                    ├── --app -a [Required] ........ GUID, app name, or fully-qualified Azure resource name of Application Insights component.
-|                    └── --location -l [Required] ........ Location.
+└──  monitor ..................................  Manage the Azure Monitor Service.
+     ├── log-analytics .............................. Manage Azure log analytics.
+     |     └── query ....... Query a Log Analytics workspace.
+     |          ├── --workspace -w [Required] ... GUID of Log Analytics workspace
+     |          ├── --analytics-query [Required] .... Query to execute over Log Analytics data.
+     |          └── --output -o ..... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+     ├── action-group .............................. Manage action groups.
+     |     └── create ....... Create a new action group.
+     |          ├── --resource-group -g ... Name of resource group.
+     |          ├── --name --action-group-name -n [Required] .... The name of the action group.
+     |          ├── --action --actions -a .... Add receivers to the action group during the creation.
+     |          └── --short-name --group-short-name ..... The short name of the action group. This will be used in SMS messages.
+     ├── scheduled-query .............................. Commands to manage scheduled queries.
+     |     ├── create ....... Create a scheduled query.
+     |     |    ├── --resource-group -g [Required] ... Name of resource group.
+     |     |    ├── --name -n [Required] .... Name of the scheduled query rule.
+     |     |    ├── --scopes [Required] .... Space-separated list of scopes the rule applies to.
+     |     |    ├── --condition [Required] .... The condition which triggers the rule.
+     |     |    ├── --evaluation-frequency .... Frequency with which to evaluate the rule in "##h##m##s" format.
+     |     |    ├── --window-size .... Time over which to aggregate metrics in "##h##m##s" format.
+     |     |    ├── --severity .... Severity of the alert from 0 (critical) to 4 (verbose).
+     |     |    ├── --description .... Free-text description of the rule.
+     |     |    └── --condition-query ..... Query details to replace the placeholders in `--condition` argument.
+     |     ├── list ....... List all scheduled queries.
+     |     |    ├── --resource-group -g ... Name of resource group.
+     |     |    └── --output -o ..... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+     |     └── show ....... Show detail of a scheduled query.
+     |          ├── --resource-group -g ... Name of resource group.
+     |          ├── --name -n .... Name of the scheduled query rule.
+     |          ├── --query .... JMESPath query string.
+     |          └── --output -o ..... Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+     └──  app-insights ...................... Commands for querying data in Application Insights applications.
+           └── component ............. Manage an Application Insights component or its subcomponents.
+                ├── show ........ Get an Application Insights resource.
+                |    ├── --resource-group -g ........ Name of resource group.
+                |    ├── --app -a ........ GUID, app name, or fully-qualified Azure resource name of Application Insights component.
+                |    ├── --query ........ JMESPath query string.
+                |    └── --output -o ........ Output format (json [default], jsonc, none, table, tsv, yaml, yamlc)
+                └── create ........ Create a new Application Insights resource.
+                     ├── --resource-group -g [Required] ........ Name of resource group.
+                     ├── --app -a [Required] ........ GUID, app name, or fully-qualified Azure resource name of Application Insights component.
+                     └── --location -l [Required] ........ Location.
 ```
 
 ## Kubectl CLI Breakdown
