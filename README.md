@@ -622,9 +622,9 @@ kubectl
 │   |    └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
 |   └── deployment ...................... Kubernetes resource type.
 │        └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
-├── logs .................................. Print the logs for a container in a pod.
-│   ├── --selector -l .............................. Selector (label query) to filter on, supports '=', '==', '!=', 'in', 'notin'.
-│   └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
+└── logs .................................. Print the logs for a container in a pod.
+    ├── --selector -l .............................. Selector (label query) to filter on, supports '=', '==', '!=', 'in', 'notin'.
+    └── --namespace -n .............................. Tells command which specific workspace inside K Cluster to target.
 ```
 ## Az provider register --namespace Values Used:
 1. Microsoft.ContainerRegistry
