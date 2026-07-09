@@ -604,6 +604,8 @@ kubectl
 14. Microsoft.EventGrid
 15. Microsoft.KeyVault
 16. Microsoft.AppConfiguration
+17. Microsoft.Insights
+18. Microsoft.OperationalInsights
 
 <!-- Copy/Paste to edit ASCII Tree
 ├──  (Middle item)
